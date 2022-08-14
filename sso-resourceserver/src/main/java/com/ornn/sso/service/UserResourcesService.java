@@ -1,4 +1,4 @@
-package com.ornn.sso.Service;
+package com.ornn.sso.service;
 
 import com.ornn.sso.entity.BO.GetUserInfoBO;
 import com.ornn.sso.entity.DTO.GetUserInfoDTO;
