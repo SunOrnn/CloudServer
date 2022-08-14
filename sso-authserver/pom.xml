@@ -12,9 +12,9 @@
 	</parent>
 
 	<groupId>com.ornn.sso</groupId>
-	<artifactId>demo</artifactId>
+	<artifactId>authserver</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>authserver</name>
+	<name>sso-authserver</name>
 
 	<description>Demo project for Spring Boot</description>
 
@@ -128,19 +128,13 @@
 
 	<build>
 		<plugins>
+			<!--引入Spring Boot Maven编译插件-->
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
-				<configuration>
-					<excludes>
-						<exclude>
-							<groupId>org.projectlombok</groupId>
-							<artifactId>lombok</artifactId>
-						</exclude>
-					</excludes>
-				</configuration>
 			</plugin>
 		</plugins>
+
 		<resources>
 			<resource>
 				<directory>${basedir}/src/main/resources</directory>

@@ -1,4 +1,4 @@
-package com.ornn.sso.Service;
+package com.ornn.sso.service;
 
 import com.ornn.sso.client.ResourceServerClient;
 import com.ornn.sso.entity.ResponseResult;
