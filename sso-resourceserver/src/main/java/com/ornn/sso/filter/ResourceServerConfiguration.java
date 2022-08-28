@@ -1,4 +1,4 @@
-package com.ornn.sso.config;
+package com.ornn.sso.filter;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;

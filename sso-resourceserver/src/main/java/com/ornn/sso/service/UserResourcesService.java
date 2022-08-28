@@ -1,7 +1,8 @@
 package com.ornn.sso.service;
 
-import com.ornn.sso.entity.BO.GetUserInfoBO;
-import com.ornn.sso.entity.DTO.GetUserInfoDTO;
+import com.ornn.sso.entity.bo.GetUserInfoBO;
+import com.ornn.sso.entity.dto.GetUserInfoDTO;
+import org.springframework.stereotype.Service;
 
 public interface UserResourcesService {
     /**

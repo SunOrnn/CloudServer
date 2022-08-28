@@ -8,4 +8,8 @@ spring:
       host: 127.0.0.1
       port: 8500
       discovery:
-        preferIpAddress:
+        preferIpAddress: rue
+        instance-id: ${spring.application.name}:${spring.cloud.client.ipAddress}:${spring.application.instance_id:${server.port}}:@project.version@
+        health-check-path: /autuator/health
+server:
+  9090
