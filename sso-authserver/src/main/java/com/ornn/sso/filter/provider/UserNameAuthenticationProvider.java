@@ -1,4 +1,4 @@
-package com.ornn.sso.config.provider;
+package com.ornn.sso.filter.provider;
 
 import com.ornn.sso.utils.Md5Utils;
 import lombok.Data;

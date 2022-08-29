@@ -1,7 +1,8 @@
 package com.ornn.sso.service;
 
-import com.ornn.sso.entity.BO.CheckPassWordBO;
-import com.ornn.sso.entity.DTO.CheckPassWordDTO;
+import com.ornn.sso.entity.bo.CheckPassWordBO;
+import com.ornn.sso.entity.dto.CheckPassWordDTO;
+import org.springframework.stereotype.Service;
 
 public interface UserAuthService {
     /**
