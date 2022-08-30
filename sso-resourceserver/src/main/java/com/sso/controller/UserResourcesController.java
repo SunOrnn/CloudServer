@@ -1,9 +1,9 @@
-package com.ornn.sso.controller;
+package com.sso.controller;
 
-import com.ornn.sso.entity.bo.GetUserInfoBO;
-import com.ornn.sso.entity.dto.GetUserInfoDTO;
-import com.ornn.sso.entity.ResponseResult;
-import com.ornn.sso.service.UserResourcesService;
+import com.sso.entity.BO.GetUserInfoBO;
+import com.sso.entity.DTO.GetUserInfoDTO;
+import com.sso.entity.ResponseResult;
+import com.sso.service.UserResourcesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;

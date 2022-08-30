@@ -1,4 +1,4 @@
-package com.ornn.sso.client;
+package src.main.java.com.ornn.sso.client;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

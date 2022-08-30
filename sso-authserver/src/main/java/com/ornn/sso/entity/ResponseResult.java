@@ -1,8 +1,8 @@
-package com.ornn.sso.entity;
+package src.main.java.com.ornn.sso.entity;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import com.ornn.sso.entity.enums.GlobalCodeEnum;
+import src.main.java.com.ornn.sso.entity.enums.GlobalCodeEnum;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -59,7 +59,7 @@ public class ResponseResult<T> implements Serializable {
         ResponseResult<T> responseResult = new ResponseResult<>();
         responseResult.setCode(globalCodeEnum.getCode());
         responseResult.setMessage(globalCodeEnum.getDesc());
-        responseResult.setData(responseResult.getData());
+        responseResult.setData(data);
         return responseResult;
     }
 

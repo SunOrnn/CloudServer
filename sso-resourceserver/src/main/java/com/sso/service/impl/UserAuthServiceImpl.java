@@ -1,12 +1,12 @@
-package com.ornn.sso.service.impl;
+package com.sso.service.impl;
 
-import com.ornn.sso.entity.bo.CheckPassWordBO;
-import com.ornn.sso.entity.dto.CheckPassWordDTO;
-import com.ornn.sso.entity.enums.GlobalCodeEnum;
-import com.ornn.sso.entity.po.OauthUserDetailsPO;
-import com.ornn.sso.exception.ServiceException;
-import com.ornn.sso.mapper.OauthUserDetailsMapper;
-import com.ornn.sso.service.UserAuthService;
+import com.sso.entity.BO.CheckPassWordBO;
+import com.sso.entity.DTO.CheckPassWordDTO;
+import com.sso.entity.enums.GlobalCodeEnum;
+import com.sso.entity.po.OauthUserDetailsPO;
+import com.sso.service.UserAuthService;
+import com.sso.exception.ServiceException;
+import com.sso.mapper.OauthUserDetailsMapper;
 import org.apache.commons.lang3.ObjectUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -18,7 +18,7 @@ public class UserAuthServiceImpl implements UserAuthService {
     private OauthUserDetailsMapper oauthUserDetailsMapper;
 
     @Override
-    public CheckPassWordBO checkPassWordBO(CheckPassWordDTO checkPassWordDTO) {
+    public CheckPassWordBO checkPassWord(CheckPassWordDTO checkPassWordDTO) {
         // 获取用户信息
         OauthUserDetailsPO oauthUserDetailsPO = oauthUserDetailsMapper.getUserDetails(checkPassWordDTO.getUserName());
         if (ObjectUtils.isEmpty(oauthUserDetailsPO)) {

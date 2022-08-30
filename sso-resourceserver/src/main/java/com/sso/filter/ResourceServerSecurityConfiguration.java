@@ -1,4 +1,4 @@
-package com.ornn.sso.filter;
+package com.sso.filter;
 
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;

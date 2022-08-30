@@ -1,10 +1,9 @@
-package com.ornn.sso.exception;
+package src.main.java.com.ornn.sso.exception;
 
-import com.ornn.sso.entity.ResponseResult;
-import com.ornn.sso.entity.enums.GlobalCodeEnum;
+import src.main.java.com.ornn.sso.entity.ResponseResult;
+import src.main.java.com.ornn.sso.entity.enums.GlobalCodeEnum;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang.ArrayUtils;
-import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.oauth2.common.exceptions.OAuth2Exception;
 import org.springframework.validation.BindException;
@@ -17,7 +16,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletResponse;
 import java.util.List;
-import java.util.Set;
 import java.util.stream.Collectors;
 
 /**

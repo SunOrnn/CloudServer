@@ -1,4 +1,4 @@
-package com.ornn.sso.entity.po;
+package com.sso.entity.po;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

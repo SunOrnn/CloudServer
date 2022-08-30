@@ -1,8 +1,8 @@
-package com.ornn.sso.entity;
+package com.sso.entity;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import com.ornn.sso.entity.enums.GlobalCodeEnum;
+import com.sso.entity.enums.GlobalCodeEnum;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -47,6 +47,14 @@ public class ResponseResult<T> implements Serializable {
     }
 
     /**
+     * 返回的成功响应数据
+     * @return
+     */
+    public static <T> ResponseResult<T> OK(T data) {
+        return packageObject(data, GlobalCodeEnum.GL_SUCC_0000);
+    }
+
+    /**
      * 对返回的消息进行包装
      * @param data             返回的数据对象
      * @param globalCodeEnum   自定义的返回码枚举类型
@@ -56,7 +64,7 @@ public class ResponseResult<T> implements Serializable {
     public static<T> ResponseResult<T> packageObject(T data, GlobalCodeEnum globalCodeEnum) {
         ResponseResult<T> responseResult = new ResponseResult<>();
         responseResult.setCode(globalCodeEnum.getCode());
-        responseResult.setMessage(globalCodeEnum.getMessage());
+        responseResult.setMessage(globalCodeEnum.getDesc());
         responseResult.setData(data);
         return responseResult;
     }

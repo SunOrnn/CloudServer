@@ -1,12 +1,14 @@
-package com.ornn.sso.filter;
+package src.main.java.com.ornn.sso.filter;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
 import org.springframework.security.oauth2.config.annotation.configurers.ClientDetailsServiceConfigurer;
 import org.springframework.security.oauth2.config.annotation.web.configuration.AuthorizationServerConfigurerAdapter;
+import org.springframework.security.oauth2.config.annotation.web.configuration.EnableAuthorizationServer;
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerEndpointsConfigurer;
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerSecurityConfigurer;
 import org.springframework.security.oauth2.provider.ClientDetailsService;
@@ -29,6 +31,8 @@ import java.util.concurrent.TimeUnit;
  * @author: CANHUI.WANG * @create: 2022-07-28
  */
 
+@Configuration
+@EnableAuthorizationServer
 public class AuthSeverConfiguration extends AuthorizationServerConfigurerAdapter {
 
     /**
@@ -86,8 +90,6 @@ public class AuthSeverConfiguration extends AuthorizationServerConfigurerAdapter
                 .tokenServices(tokenServices)
                 .authorizationCodeServices(getJdbcAuthorizationCodeServices())
                 .approvalStore(getJdbcApprovalStore());
-
-
     }
 
     /**
@@ -98,24 +100,24 @@ public class AuthSeverConfiguration extends AuthorizationServerConfigurerAdapter
     @Override
     public void configure(AuthorizationServerSecurityConfigurer security) throws Exception {
         security.tokenKeyAccess("permitAll()")
-                .checkTokenAccess("hasAuthority('Role_TRUSTED_CLIENT')")
+                .checkTokenAccess("hasAuthority('ROLE_TRUSTED_CLIENT')")
                 .allowFormAuthenticationForClients();
     }
 
-    @Bean
     /**
      * 数据库管理的用户授权确认记录
      * @return
      */
+    @Bean
     public ApprovalStore getJdbcApprovalStore() {
         return new JdbcApprovalStore(dataSource);
     }
 
-    @Bean
     /**
      * 数据库管理的授权码信息
      * @return
      */
+    @Bean
     public AuthorizationCodeServices getJdbcAuthorizationCodeServices() {
         return new JdbcAuthorizationCodeServices(dataSource);
     }

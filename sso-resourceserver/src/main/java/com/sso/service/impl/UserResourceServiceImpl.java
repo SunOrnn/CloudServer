@@ -1,12 +1,12 @@
-package com.ornn.sso.service.impl;
+package com.sso.service.impl;
 
-import com.ornn.sso.entity.bo.GetUserInfoBO;
-import com.ornn.sso.entity.dto.GetUserInfoDTO;
-import com.ornn.sso.entity.enums.GlobalCodeEnum;
-import com.ornn.sso.entity.po.OauthUserDetailsPO;
-import com.ornn.sso.exception.ServiceException;
-import com.ornn.sso.mapper.OauthUserDetailsMapper;
-import com.ornn.sso.service.UserResourcesService;
+import com.sso.entity.BO.GetUserInfoBO;
+import com.sso.entity.DTO.GetUserInfoDTO;
+import com.sso.entity.enums.GlobalCodeEnum;
+import com.sso.entity.po.OauthUserDetailsPO;
+import com.sso.service.UserResourcesService;
+import com.sso.exception.ServiceException;
+import com.sso.mapper.OauthUserDetailsMapper;
 import org.apache.commons.lang3.ObjectUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

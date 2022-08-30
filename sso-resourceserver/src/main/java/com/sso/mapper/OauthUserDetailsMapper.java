@@ -1,7 +1,7 @@
-package com.ornn.sso.mapper;
+package com.sso.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.ornn.sso.entity.po.OauthUserDetailsPO;
+import com.sso.entity.po.OauthUserDetailsPO;
 import org.apache.ibatis.annotations.Mapper;
 
 @Mapper

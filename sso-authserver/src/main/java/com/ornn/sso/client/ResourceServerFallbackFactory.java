@@ -1,6 +1,6 @@
-package com.ornn.sso.client;
+package src.main.java.com.ornn.sso.client;
 
-import com.ornn.sso.entity.ResponseResult;
+import src.main.java.com.ornn.sso.entity.ResponseResult;
 import feign.hystrix.FallbackFactory;
 import lombok.extern.slf4j.Slf4j;
 

@@ -1,4 +1,4 @@
-package com.ornn.sso.entity.enums;
+package src.main.java.com.ornn.sso.entity.enums;
 
 public enum GlobalCodeEnum {
     /**

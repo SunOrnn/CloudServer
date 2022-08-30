@@ -1,8 +1,8 @@
-package com.ornn.sso.client;
+package src.main.java.com.ornn.sso.client;
 
-import com.ornn.sso.entity.ResponseResult;
-import com.ornn.sso.entity.bo.CheckPasswordBO;
-import com.ornn.sso.entity.dto.CheckPasswordDTO;
+import src.main.java.com.ornn.sso.entity.ResponseResult;
+import src.main.java.com.ornn.sso.entity.bo.CheckPasswordBO;
+import src.main.java.com.ornn.sso.entity.dto.CheckPasswordDTO;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.security.oauth2.config.annotation.web.configuration.ResourceServerConfiguration;
 import org.springframework.web.bind.annotation.PostMapping;

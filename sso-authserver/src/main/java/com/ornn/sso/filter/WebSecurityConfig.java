@@ -1,6 +1,6 @@
-package com.ornn.sso.filter;
+package src.main.java.com.ornn.sso.filter;
 
-import com.ornn.sso.filter.provider.UserNameAuthenticationProvider;
+import src.main.java.com.ornn.sso.filter.provider.UserNameAuthenticationProvider;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

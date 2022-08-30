@@ -1,7 +1,7 @@
-package com.ornn.sso.exception;
+package com.sso.exception;
 
-import com.ornn.sso.entity.ResponseResult;
-import com.ornn.sso.entity.enums.GlobalCodeEnum;
+import com.sso.entity.ResponseResult;
+import com.sso.entity.enums.GlobalCodeEnum;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang.ArrayUtils;
 import org.springframework.http.HttpStatus;

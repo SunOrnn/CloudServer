@@ -1,4 +1,4 @@
-package com.ornn.sso.exception;
+package com.sso.exception;
 
 public class ServiceException extends RuntimeException{
     private final Integer code;

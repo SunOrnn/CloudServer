@@ -1,4 +1,4 @@
-package com.ornn.sso.entity.dto;
+package com.sso.entity.DTO;
 
 import lombok.Data;
 

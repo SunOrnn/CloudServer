@@ -1,6 +1,6 @@
-package com.ornn.sso;
+package src.main.java.com.ornn.sso;
 
-import com.ornn.sso.client.ResourceServerClient;
+import src.main.java.com.ornn.sso.client.ResourceServerClient;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
