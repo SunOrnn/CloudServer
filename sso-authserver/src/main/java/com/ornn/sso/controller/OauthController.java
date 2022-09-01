@@ -1,6 +1,5 @@
-package com.ornn.sso.controller;
+package src.main.java.com.ornn.sso.controller;
 
-import org.bouncycastle.math.raw.Mod;
 import org.springframework.security.oauth2.provider.AuthorizationRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

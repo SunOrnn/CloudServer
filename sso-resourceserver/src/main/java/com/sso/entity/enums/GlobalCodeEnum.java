@@ -1,4 +1,8 @@
-package src.main.java.com.ornn.sso.entity.enums;
+package com.sso.entity.enums;
+
+/**
+ * @author: CANHUI.WANG * @create: 2022-08-04
+ */
 
 public enum GlobalCodeEnum {
     /**
@@ -11,10 +15,9 @@ public enum GlobalCodeEnum {
     GL_FAIL_9999(999, "系统异常"),
 
     /**
-     * 认证授权业务异常码定义
+     * 业务逻辑异常码定义
      */
-    BUSI_INVALID_GRANT(1001, "非法授权操作");
-
+    BUSI_USER_NOT_EXIST(1001, "用户信息不存在");
     /**
      * 编码
      */

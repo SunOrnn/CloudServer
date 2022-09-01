@@ -1,4 +1,4 @@
-package com.ornn.sso.entity.bo;
+package src.main.java.com.ornn.sso.entity.bo;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

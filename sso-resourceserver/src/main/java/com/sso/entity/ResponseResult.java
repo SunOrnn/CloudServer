@@ -1,8 +1,8 @@
-package src.main.java.com.ornn.sso.entity;
+package com.sso.entity;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import src.main.java.com.ornn.sso.entity.enums.GlobalCodeEnum;
+import com.sso.entity.enums.GlobalCodeEnum;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -11,51 +11,57 @@ import lombok.NoArgsConstructor;
 import java.io.Serializable;
 
 /**
- * @author: CANHUI.WANG * @create: 2022-07-29
+ * @author: CANHUI.WANG * @create: 2022-08-04
  */
-@Data
-@Builder
+
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
+@Data
 @JsonPropertyOrder({"code", "message", "data"})
 public class ResponseResult<T> implements Serializable {
     private static final long serialVersionUID = 1L;
 
     /**
-     * 返回的对象
+     * 返回的业务数据对象
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     private T data;
 
     /**
-     * 返回的编码
+     * 返回单位响应编码
      */
     private Integer code;
 
     /**
-     * 返回的信息
+     * 返回的响应信息
      */
     private String message;
 
     /**
-     * 成功返回成功的响应码
+     * 返回的成功响应码
+     * @return
      */
     public static ResponseResult<String> OK() {
         return packageObject("", GlobalCodeEnum.GL_SUCC_0000);
     }
 
+    /**
+     * 返回的成功响应数据
+     * @return
+     */
     public static <T> ResponseResult<T> OK(T data) {
         return packageObject(data, GlobalCodeEnum.GL_SUCC_0000);
     }
 
     /**
      * 对返回的消息进行包装
-     * @param data
-     * @param globalCodeEnum
-     * @return
+     * @param data             返回的数据对象
+     * @param globalCodeEnum   自定义的返回码枚举类型
+     * @return                 返回的数据类型
      * @param <T>
      */
-    public static <T> ResponseResult<T> packageObject(T data, GlobalCodeEnum globalCodeEnum) {
+    public static<T> ResponseResult<T> packageObject(T data, GlobalCodeEnum globalCodeEnum) {
         ResponseResult<T> responseResult = new ResponseResult<>();
         responseResult.setCode(globalCodeEnum.getCode());
         responseResult.setMessage(globalCodeEnum.getDesc());
@@ -64,8 +70,8 @@ public class ResponseResult<T> implements Serializable {
     }
 
     /**
-     * 系统发生异常不可用时返回
-     * @return
+     * 在系统发生异常不可用时返回的信息
+     * @return 响应结果
      * @param <T>
      */
     public static <T> ResponseResult<T> systemException() {
@@ -73,7 +79,10 @@ public class ResponseResult<T> implements Serializable {
     }
 
     /**
-     * 发现可感知的系统异常时返回
+     * 在发生可感知的系统异常时返回的信息
+     * @param globalCodeEnum
+     * @return
+     * @param <T>
      */
     public static <T> ResponseResult<T> systemException(GlobalCodeEnum globalCodeEnum) {
         return packageObject(null, globalCodeEnum);

@@ -1,11 +1,10 @@
-package src.main.java.com.ornn.sso.exception;
+package com.sso.exception;
 
-import src.main.java.com.ornn.sso.entity.ResponseResult;
-import src.main.java.com.ornn.sso.entity.enums.GlobalCodeEnum;
+import com.sso.entity.ResponseResult;
+import com.sso.entity.enums.GlobalCodeEnum;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang.ArrayUtils;
 import org.springframework.http.HttpStatus;
-import org.springframework.security.oauth2.common.exceptions.OAuth2Exception;
 import org.springframework.validation.BindException;
 import org.springframework.validation.ObjectError;
 import org.springframework.web.HttpRequestMethodNotSupportedException;
@@ -18,16 +17,29 @@ import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 import java.util.stream.Collectors;
 
-/**
- * @author: CANHUI.WANG * @create: 2022-08-02
- */
-
 @Slf4j
 @ControllerAdvice
 public class GlobalExceptionHandler {
+    /**
+     * method of service exception handing
+     * @param response
+     * @param e
+     * @return
+     */
+    @ExceptionHandler(ServiceException.class)
+    @ResponseBody
+    public ResponseResult<?> processServiceException(HttpServletResponse response, ServiceException e) {
+        response.setStatus(HttpStatus.OK.value());
+        response.setContentType("application/json;charset=UTF-8");
+        ResponseResult responseResult = new ResponseResult();
+        responseResult.setCode(e.getCode());
+        responseResult.setMessage(e.getMessage());
+        log.error(e.toString() + "_" + e.getMessage(), e);
+        return responseResult;
+    }
 
     /**
-     * 统一处理参数校验错误异常
+     * parameter verification error handing method 1
      * @param response
      * @param e
      * @return
@@ -44,7 +56,7 @@ public class GlobalExceptionHandler {
     }
 
     /**
-     * 统一处理参数校验错误异常
+     * parameter verification error handing method 2
      * @param response
      * @param e
      * @return
@@ -61,7 +73,7 @@ public class GlobalExceptionHandler {
     }
 
     /**
-     *
+     * parameter verification error handing method 1
      * @param response
      * @param e
      * @return
@@ -71,9 +83,9 @@ public class GlobalExceptionHandler {
     public ResponseResult<?> processValidException(HttpServletResponse response, HttpRequestMethodNotSupportedException e) {
         response.setStatus(HttpStatus.INTERNAL_SERVER_ERROR.value());
         String[] supportedMethods = e.getSupportedMethods();
-        String errorMessage = "此接口不支持" + e.getMethod();
+        String errorMessage = "this interface is not support" + e.getMethod();
         if (!ArrayUtils.isEmpty(supportedMethods)) {
-            errorMessage += " （仅支持" + String.join(",", supportedMethods) + "）";
+            errorMessage += " (only support" + String.join(",", supportedMethods) + ")";
         }
         response.setContentType("application/json;charset=UTF-8");
         log.error(e.toString() + "_" + e.getMessage(), e);
@@ -81,29 +93,14 @@ public class GlobalExceptionHandler {
     }
 
     /**
-     * 非法授权异常统一处理
+     * method of unknow system exception handing
      * @param response
      * @param e
      * @return
      */
-    @ExceptionHandler(OAuth2Exception.class)
+    @ExceptionHandler(ServiceException.class)
     @ResponseBody
-    public ResponseResult<?> processOAuth2Exception(HttpServletResponse response, OAuth2Exception e) {
-        response.setStatus(HttpStatus.INTERNAL_SERVER_ERROR.value());
-        response.setContentType("application/json;charset=UTF-8");
-        log.error(e.toString() + "_" + e.getMessage(), e);
-        return ResponseResult.systemException(GlobalCodeEnum.BUSI_INVALID_GRANT);
-    }
-
-    /**
-     * 未知系统异常处理方法
-     * @param response
-     * @param e
-     * @return
-     */
-    @ExceptionHandler(Exception.class)
-    @ResponseBody
-    public ResponseResult<?> processDefaultException(HttpServletResponse response, Exception e) {
+    public ResponseResult<?> processDefaultException(HttpServletResponse response, ServiceException e) {
         response.setStatus(HttpStatus.INTERNAL_SERVER_ERROR.value());
         response.setContentType("application/json;charset=UTF-8");
         log.error(e.toString() + "_" + e.getMessage(), e);

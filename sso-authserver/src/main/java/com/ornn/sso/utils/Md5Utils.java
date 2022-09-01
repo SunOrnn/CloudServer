@@ -1,4 +1,4 @@
-package com.ornn.sso.utils;
+package src.main.java.com.ornn.sso.utils;
 
 import java.security.MessageDigest;
 import java.util.UUID;

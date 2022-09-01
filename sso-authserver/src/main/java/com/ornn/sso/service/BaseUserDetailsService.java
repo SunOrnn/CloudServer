@@ -1,9 +1,9 @@
-package com.ornn.sso.service;
+package src.main.java.com.ornn.sso.service;
 
-import com.ornn.sso.client.ResourceServerClient;
-import com.ornn.sso.entity.ResponseResult;
-import com.ornn.sso.entity.bo.CheckPasswordBO;
-import com.ornn.sso.entity.dto.CheckPasswordDTO;
+import src.main.java.com.ornn.sso.client.ResourceServerClient;
+import src.main.java.com.ornn.sso.entity.ResponseResult;
+import src.main.java.com.ornn.sso.entity.bo.CheckPasswordBO;
+import src.main.java.com.ornn.sso.entity.dto.CheckPasswordDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.User;
@@ -28,7 +28,6 @@ public class BaseUserDetailsService implements UserDetailsService {
      */
     @Autowired
     ResourceServerClient resourceServerClient;
-
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
