@@ -11,11 +11,18 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/account")
 public class UserAccountTradeController {
 
-
+    /**
+     * “电子钱包充值”接口
+     * @return
+     */
     public ResponseEntity<?> chargeOrder() {
         return ResponseEntity.ok().build();
     }
 
+    /**
+     * ”电子钱包充值支付回调“接口
+     * @return
+     */
     public ResponseEntity<?> receivePayNotify() {
         return ResponseEntity.ok().build();
     }

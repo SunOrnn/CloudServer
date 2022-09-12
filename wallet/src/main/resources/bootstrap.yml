@@ -9,5 +9,14 @@ spring:
           preferIpAddress: true
           instance-id: ${spring.application.name}:${spring.cloud.client.ipAddress}:${spring.application.instance_id:${server.port}}:@project.version@
           healthCheckPath: /actuator/health
+
+
 server:
   port: 9090
+
+# 配置Feign对Hystrix的支持
+feign:
+  hystrix:
+    enable: true
+
+
