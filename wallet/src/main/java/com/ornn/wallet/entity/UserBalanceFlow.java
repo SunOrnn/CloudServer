@@ -51,12 +51,12 @@ public class UserBalanceFlow {
     /**
      * 变动前的金额
      */
-    private Integer beginBalance;
+    private Double beginBalance;
 
     /**
      * 变动后的金额
      */
-    private Integer endDirect;
+    private Double endBalance;
 
     /**
      * 借贷方向

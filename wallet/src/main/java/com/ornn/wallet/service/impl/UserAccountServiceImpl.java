@@ -10,6 +10,9 @@ import com.ornn.wallet.entity.vo.AccountVO;
 import com.ornn.wallet.exception.ServiceException;
 import com.ornn.wallet.mapper.UserBalanceMapper;
 import com.ornn.wallet.service.UserAccountService;
+import com.ornn.wallet.util.DateUtils;
+import com.ornn.wallet.util.IDutils;
+import com.ornn.wallet.util.SnowFlakeIdGenerator;
 import org.apache.commons.lang3.ObjectUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,10 +20,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
 
 import java.sql.Timestamp;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @Service
 public class UserAccountServiceImpl implements UserAccountService {
@@ -29,7 +29,7 @@ public class UserAccountServiceImpl implements UserAccountService {
     private UserBalanceMapper userBalanceMapper;
 
     @Override
-    public AccountOpenVO openAcc(AccountOpenDTO accountOpenDTO) {
+    public AccountOpenVO openAcc(AccountOpenDTO accountOpenDTO) throws IllegalAccessException {
         // 判断在同一个用户ID下是否存在同一种类型的账户
         Map parmaMap = new HashMap<>();
         parmaMap.put("user_id", accountOpenDTO.getUserId());
@@ -82,11 +82,11 @@ public class UserAccountServiceImpl implements UserAccountService {
     /**
      * 生成电子钱包账户编号
      */
-    private String getAccountNo() {
-        // 雪花算法ID生成器
+    private String getAccountNo() throws IllegalAccessException {
+        // “雪花生成器”ID生成器
+        SnowFlakeIdGenerator idGenerator = new SnowFlakeIdGenerator(IDutils.getWorkId(), 1);
+        // 以“日期YYYYMMDDHHmmss + 随机生成ID”规则生成充值订单号
+        return DateUtils.getStringByFormat(new Date(), DateUtils.sf3) + idGenerator.nextId();
 
-        // 以“日期YYYYMMDD + 随机ID” 规则生成电子钱包账户编号
-
-        return null;
     }
 }

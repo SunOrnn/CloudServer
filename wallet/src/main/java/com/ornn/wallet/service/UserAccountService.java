@@ -13,7 +13,7 @@ public interface UserAccountService {
      * @param accountOpenDTO
      * @return
      */
-    AccountOpenVO openAcc(AccountOpenDTO accountOpenDTO);
+    AccountOpenVO openAcc(AccountOpenDTO accountOpenDTO) throws IllegalAccessException;
 
     /**
      * 定义”电子钱包“接口的业务层方法

@@ -4,5 +4,5 @@ import com.ornn.wallet.entity.AddBalance;
 
 public interface UserBalanceService {
 
-    boolean addBalance(AddBalance addBalanceBo);
+    boolean addBalance(AddBalance addBalanceBo) throws IllegalAccessException;
 }

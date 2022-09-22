@@ -4,21 +4,30 @@ import com.ornn.wallet.client.PaymentClient;
 import com.ornn.wallet.convert.UserBalanceConvert;
 import com.ornn.wallet.entity.UserBalanceOrder;
 import com.ornn.wallet.entity.AddBalance;
+import com.ornn.wallet.entity.contant.BusinessCodeEnum;
 import com.ornn.wallet.entity.contant.TradeType;
 import com.ornn.wallet.entity.dto.UnifiedPayDTO;
 import com.ornn.wallet.entity.vo.AccountChargeVO;
 import com.ornn.wallet.entity.vo.PayNotifyVO;
 import com.ornn.wallet.entity.dto.AccountChargeDTO;
 import com.ornn.wallet.entity.dto.PayNotifyDTO;
+import com.ornn.wallet.entity.vo.UnifiedPayVO;
+import com.ornn.wallet.exception.DaoException;
 import com.ornn.wallet.mapper.UserBalanceMapper;
 import com.ornn.wallet.mapper.UserBalanceOrderMapper;
 import com.ornn.wallet.service.UserAccountTradeService;
 import com.ornn.wallet.service.UserBalanceService;
+import com.ornn.wallet.util.DateUtils;
+import com.ornn.wallet.util.IDutils;
+import com.ornn.wallet.util.SnowFlakeIdGenerator;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.support.DataAccessUtils;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
 
 import java.sql.Timestamp;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -44,7 +53,20 @@ public class UserAccountTradeServiceImpl implements UserAccountTradeService {
      * @return
      */
     @Override
-    public AccountChargeVO chargeOrder(AccountChargeDTO accountChargeDTO) {
+    public AccountChargeVO chargeOrder(AccountChargeDTO accountChargeDTO) throws IllegalAccessException {
+        // 生成电子钱包充值订单信息
+        UserBalanceOrder userBalanceOrder = createChargeOrder(accountChargeDTO);
+        try {
+            userBalanceOrderMapper.insert(userBalanceOrder);
+        } catch (Exception e) {
+            throw new DaoException(BusinessCodeEnum.BUSI_CHARGE_FAIL_2000.getCode(), BusinessCodeEnum.BUSI_CHARGE_FAIL_2000.getDesc(), e);
+        }
+        // 调用支付系统接口
+        // 构建支付请求参数
+        UnifiedPayDTO unifiedPayDTO = buildUnifiedPayDTO(accountChargeDTO, userBalanceOrder);
+        ResponseEntity<?> responseEntity = paymentClient.unifiedPay(unifiedPayDTO);
+
+
         return null;
     }
 
@@ -53,7 +75,7 @@ public class UserAccountTradeServiceImpl implements UserAccountTradeService {
      * @param accountChargeDTO
      * @return
      */
-    private UserBalanceOrder createChargeOrder(AccountChargeDTO accountChargeDTO) {
+    private UserBalanceOrder createChargeOrder(AccountChargeDTO accountChargeDTO) throws IllegalAccessException {
         UserBalanceOrder userBalanceOrder = UserBalanceConvert.INSTANCE.convertUserBalanceOrder(accountChargeDTO);
         // 生成电子钱包充值订单流水号
         String orderId = getOrderId();
@@ -75,8 +97,11 @@ public class UserAccountTradeServiceImpl implements UserAccountTradeService {
      * 以特定的规则生成电子钱包充值订单流水号的私有方法
      * @return
      */
-    private String getOrderId() {
-        return null;
+    private String getOrderId() throws IllegalAccessException {
+        // “雪花生成器”ID生成器
+        SnowFlakeIdGenerator idGenerator = new SnowFlakeIdGenerator(IDutils.getWorkId(), 1);
+        // 以“日期YYYYMMDDHHmmss + 随机生成ID”规则生成充值订单号
+        return DateUtils.getStringByFormat(new Date(), DateUtils.sf3) + idGenerator.nextId();
     }
 
     /**
@@ -120,10 +145,10 @@ public class UserAccountTradeServiceImpl implements UserAccountTradeService {
      * @return
      */
     @Override
-    public PayNotifyVO receivePayNotify(PayNotifyDTO payNotifyDTO) {
+    public PayNotifyVO receivePayNotify(PayNotifyDTO payNotifyDTO) throws IllegalAccessException {
         // 判断电子钱包充值订单支付状态是否为成功
         Map paramMap = new HashMap<>();
-        paramMap.put("order)_id", payNotifyDTO.getOrderId());
+        paramMap.put("order_id", payNotifyDTO.getOrderId());
         List<UserBalanceOrder> userBalanceOrderList = userBalanceMapper.selectByMap(paramMap);
 
         // 如果电子钱包充值订单不存在，则返回失败结果

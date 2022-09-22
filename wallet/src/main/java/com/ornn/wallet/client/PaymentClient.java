@@ -2,6 +2,7 @@ package com.ornn.wallet.client;
 
 import com.ornn.wallet.config.PaymentConfiguration;
 import com.ornn.wallet.entity.dto.UnifiedPayDTO;
+import com.ornn.wallet.entity.vo.UnifiedPayVO;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
