@@ -7,7 +7,7 @@ import com.ornn.wallet.entity.vo.PayNotifyVO;
 
 public interface UserAccountTradeService {
 
-    AccountChargeVO chargeOrder(AccountChargeDTO accountChargeDTO);
+    AccountChargeVO chargeOrder(AccountChargeDTO accountChargeDTO) throws IllegalAccessException;
 
-    PayNotifyVO receivePayNotify(PayNotifyDTO payNotifyDTO);
+    PayNotifyVO receivePayNotify(PayNotifyDTO payNotifyDTO) throws IllegalAccessException;
 }

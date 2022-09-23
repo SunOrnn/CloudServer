@@ -2,6 +2,7 @@ package com.ornn.wallet.client;
 
 import com.ornn.wallet.entity.contant.BusinessCodeEnum;
 import com.ornn.wallet.entity.dto.UnifiedPayDTO;
+import com.ornn.wallet.entity.vo.UnifiedPayVO;
 import com.ornn.wallet.exception.ServiceException;
 import feign.hystrix.FallbackFactory;
 import lombok.extern.slf4j.Slf4j;

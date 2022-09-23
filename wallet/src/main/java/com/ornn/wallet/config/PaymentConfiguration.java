@@ -1,6 +1,6 @@
 package com.ornn.wallet.config;
 
-import com.ornn.wallet.client.PayMentClientFFallbackFactory;
+import com.ornn.wallet.client.PayMentClientFallbackFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Configuration;
 public class PaymentConfiguration {
 
     @Bean
-    PayMentClientFFallbackFactory payMentClientFallbackFactory() {
+    PayMentClientFallbackFactory payMentClientFallbackFactory() {
         return new PayMentClientFallbackFactory();
     }
 }
