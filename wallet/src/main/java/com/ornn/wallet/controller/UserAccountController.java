@@ -6,6 +6,8 @@ import com.ornn.wallet.entity.dto.AccountQueryDTO;
 import com.ornn.wallet.entity.vo.AccountOpenVO;
 import com.ornn.wallet.entity.vo.AccountVO;
 import com.ornn.wallet.service.UserAccountService;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
@@ -18,6 +20,7 @@ import java.util.List;
  */
 @RestController
 @RequestMapping("/account")
+@Api(value = "")
 public class UserAccountController {
     @Autowired
     private UserAccountService userAccountService;
@@ -26,6 +29,7 @@ public class UserAccountController {
      * 电子钱包开户
      * @return
      */
+    @ApiOperation(value = "", tags = "电子钱包开户")
     @PostMapping("/openAcc")
     public ResponseResult<AccountOpenVO> openAcc(@RequestBody @Validated AccountOpenDTO accountOpenDTO) throws IllegalAccessException {
 
@@ -36,6 +40,7 @@ public class UserAccountController {
      * 电子钱包查询
      * @return
      */
+    @ApiOperation(value = "", tags = "电子钱包查询")
     @GetMapping("/queryAcc")
     public ResponseResult<List<AccountVO>> queryAcc(@Validated AccountQueryDTO accountQueryDTO) {
         return ResponseResult.OK(userAccountService.queryAcc(accountQueryDTO));

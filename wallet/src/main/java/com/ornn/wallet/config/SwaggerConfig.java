@@ -24,10 +24,9 @@ public class SwaggerConfig {
      * @return
      */
     @Bean
-    public Docket createRestApi(Environment environment) {
+    public Docket createRestApi() {
         return new Docket(DocumentationType.SWAGGER_2)
                 .apiInfo(this.apiInfo())
-                .groupName("电子钱包系统")
                 //false 则不能在浏览器访问，true为默认。
                 .enable(true)
                 .select()
