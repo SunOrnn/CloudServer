@@ -1,12 +1,17 @@
 package com.ornn.wallet.controller;
 
+import com.ornn.wallet.entity.ResponseResult;
+import com.ornn.wallet.entity.dto.AccountOpenDTO;
+import com.ornn.wallet.entity.dto.AccountQueryDTO;
+import com.ornn.wallet.entity.vo.AccountOpenVO;
+import com.ornn.wallet.entity.vo.AccountVO;
 import com.ornn.wallet.service.UserAccountService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 /**
  * @author ORNN
@@ -22,9 +27,9 @@ public class UserAccountController {
      * @return
      */
     @PostMapping("/openAcc")
-    public ResponseEntity<?> openAcc() {
+    public ResponseResult<AccountOpenVO> openAcc(@RequestBody @Validated AccountOpenDTO accountOpenDTO) throws IllegalAccessException {
 
-        return ResponseEntity.ok().build();
+        return ResponseResult.OK(userAccountService.openAcc(accountOpenDTO));
     }
 
     /**
@@ -32,7 +37,7 @@ public class UserAccountController {
      * @return
      */
     @GetMapping("/queryAcc")
-    public ResponseEntity<?> queryAcc() {
-        return ResponseEntity.ok().build();
+    public ResponseResult<List<AccountVO>> queryAcc(@Validated AccountQueryDTO accountQueryDTO) {
+        return ResponseResult.OK(userAccountService.queryAcc(accountQueryDTO));
     }
 }
