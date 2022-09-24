@@ -2,7 +2,6 @@ package com.ornn.wallet.entity.dto;
 
 import com.ornn.wallet.validator.EnumValue;
 import lombok.Data;
-import org.aspectj.bridge.IMessage;
 
 import javax.validation.constraints.NotNull;
 import java.io.Serializable;

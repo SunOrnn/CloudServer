@@ -2,9 +2,12 @@ package com.ornn.wallet.service.impl;
 
 import com.ornn.wallet.client.PaymentClient;
 import com.ornn.wallet.convert.UserBalanceConvert;
+import com.ornn.wallet.convert.UserBalanceOrderConvert;
+import com.ornn.wallet.entity.ResponseResult;
 import com.ornn.wallet.entity.UserBalanceOrder;
 import com.ornn.wallet.entity.AddBalance;
 import com.ornn.wallet.entity.contant.BusinessCodeEnum;
+import com.ornn.wallet.entity.contant.GlobalCodeEnum;
 import com.ornn.wallet.entity.contant.TradeType;
 import com.ornn.wallet.entity.dto.UnifiedPayDTO;
 import com.ornn.wallet.entity.vo.AccountChargeVO;
@@ -13,6 +16,7 @@ import com.ornn.wallet.entity.dto.AccountChargeDTO;
 import com.ornn.wallet.entity.dto.PayNotifyDTO;
 import com.ornn.wallet.entity.vo.UnifiedPayVO;
 import com.ornn.wallet.exception.DaoException;
+import com.ornn.wallet.exception.ServiceException;
 import com.ornn.wallet.mapper.UserBalanceMapper;
 import com.ornn.wallet.mapper.UserBalanceOrderMapper;
 import com.ornn.wallet.service.UserAccountTradeService;
@@ -64,10 +68,18 @@ public class UserAccountTradeServiceImpl implements UserAccountTradeService {
         // 调用支付系统接口
         // 构建支付请求参数
         UnifiedPayDTO unifiedPayDTO = buildUnifiedPayDTO(accountChargeDTO, userBalanceOrder);
-        ResponseEntity<?> responseEntity = paymentClient.unifiedPay(unifiedPayDTO);
+        ResponseResult<UnifiedPayVO> responseResult = paymentClient.unifiedPay(unifiedPayDTO);
+        if (responseResult.getCode().equals(GlobalCodeEnum.GL_SUCC_0000.getCode())) {
+            // 支付失败的业务异常返回
+            throw new ServiceException(responseResult.getCode(), responseResult.getMessage());
+        }
+        // 获取支付返回数据
+        UnifiedPayVO unifiedPayVO = responseResult.getData();
+        // 封装返回的电子钱包充值订单信息
+        AccountChargeVO accountChargeVO = UserBalanceOrderConvert.INSTANCE.convertAccountChargeVo(unifiedPayVO);
+        accountChargeVO.setUserId(accountChargeDTO.getUserId());
 
-
-        return null;
+        return accountChargeVO;
     }
 
     /**

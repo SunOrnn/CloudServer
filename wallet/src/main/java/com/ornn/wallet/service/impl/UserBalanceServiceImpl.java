@@ -10,6 +10,7 @@ import com.ornn.wallet.util.DateUtils;
 import com.ornn.wallet.util.IDutils;
 import com.ornn.wallet.util.SnowFlakeIdGenerator;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.sql.Timestamp;
@@ -18,6 +19,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+@Service
 public class UserBalanceServiceImpl implements UserBalanceService {
 
     @Autowired

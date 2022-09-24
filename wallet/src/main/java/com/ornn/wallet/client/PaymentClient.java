@@ -1,6 +1,7 @@
 package com.ornn.wallet.client;
 
 import com.ornn.wallet.config.PaymentConfiguration;
+import com.ornn.wallet.entity.ResponseResult;
 import com.ornn.wallet.entity.dto.UnifiedPayDTO;
 import com.ornn.wallet.entity.vo.UnifiedPayVO;
 import org.springframework.cloud.openfeign.FeignClient;
@@ -18,5 +19,5 @@ public interface PaymentClient {
      * @return
      */
     @PostMapping("/pay/unifiedPay")
-    public ResponseEntity<?> unifiedPay(@RequestBody @Validated UnifiedPayDTO unifiedPayDTO);
+    public ResponseResult<UnifiedPayVO> unifiedPay(@RequestBody @Validated UnifiedPayDTO unifiedPayDTO);
 }
