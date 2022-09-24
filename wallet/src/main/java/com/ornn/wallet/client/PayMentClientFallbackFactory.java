@@ -1,5 +1,6 @@
 package com.ornn.wallet.client;
 
+import com.ornn.wallet.entity.ResponseResult;
 import com.ornn.wallet.entity.contant.BusinessCodeEnum;
 import com.ornn.wallet.entity.dto.UnifiedPayDTO;
 import com.ornn.wallet.entity.vo.UnifiedPayVO;
@@ -14,10 +15,10 @@ public class PayMentClientFallbackFactory implements FallbackFactory<PaymentClie
     public PaymentClient create(Throwable throwable) {
         return new PaymentClient() {
             @Override
-            public ResponseEntity<?> unifiedPay(UnifiedPayDTO unifiedPayDTO) {
+            public ResponseResult<UnifiedPayVO> unifiedPay(UnifiedPayDTO unifiedPayDTO) {
                 log.info("支付服务调用降级逻辑处理...");
                 log.error(throwable.getMessage());
-                return ResponseEntity.ok(new ServiceException(BusinessCodeEnum.BUSI_PAY_FALL_2001.getCode(), BusinessCodeEnum.BUSI_PAY_FALL_2001.getDesc()));
+                return new ResponseResult(new ServiceException(BusinessCodeEnum.BUSI_PAY_FALL_2001.getCode(), BusinessCodeEnum.BUSI_PAY_FALL_2001.getDesc()));
             }
         };
     }
