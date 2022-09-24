@@ -18,7 +18,7 @@ public class PayMentClientFallbackFactory implements FallbackFactory<PaymentClie
             public ResponseResult<UnifiedPayVO> unifiedPay(UnifiedPayDTO unifiedPayDTO) {
                 log.info("支付服务调用降级逻辑处理...");
                 log.error(throwable.getMessage());
-                return new ResponseResult(new ServiceException(BusinessCodeEnum.BUSI_PAY_FALL_2001.getCode(), BusinessCodeEnum.BUSI_PAY_FALL_2001.getDesc()));
+                return ResponseResult.serviceException(BusinessCodeEnum.BUSI_PAY_FALL_2001.getCode(), BusinessCodeEnum.BUSI_PAY_FALL_2001.getDesc());
             }
         };
     }
