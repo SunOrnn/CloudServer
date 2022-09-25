@@ -1,13 +1,31 @@
 package com.ornn.payment.controller;
 
+import com.ornn.payment.entity.dto.AliPayReceiveDTO;
+import com.ornn.payment.service.PayNotifyService;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @Slf4j
 @RestController
 @RequestMapping("/notify")
+@Api()
 public class PayNotifyController {
 
+    @Autowired
+    private PayNotifyService payNotifyService;
+
+    /**
+     * 定义”支付宝异步支付结果通知“
+     */
+    @ApiOperation(value = "", tags = "")
+    @PostMapping("/aliPayReceive")
+    public String aliPayReceive(AliPayReceiveDTO aliPayReceiveDTO) {
+
+    }
 
 }

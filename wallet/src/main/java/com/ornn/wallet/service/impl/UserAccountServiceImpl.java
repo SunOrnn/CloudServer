@@ -35,7 +35,7 @@ public class UserAccountServiceImpl implements UserAccountService {
         parmaMap.put("user_id", accountOpenDTO.getUserId());
         parmaMap.put("acc_type", accountOpenDTO.getAccType());
         List<UserBalance> userBalanceList = userBalanceMapper.selectByMap(parmaMap);
-        if (ObjectUtils.isNotEmpty(userBalanceList) && userBalanceList.size() > 0) {
+        if (!CollectionUtils.isEmpty(userBalanceList) && userBalanceList.size() > 0) {
             throw new ServiceException(BusinessCodeEnum.BUSI_ACCOUNT_FAIL_1000.getCode(), BusinessCodeEnum.BUSI_ACCOUNT_FAIL_1000.getDesc());
         }
 

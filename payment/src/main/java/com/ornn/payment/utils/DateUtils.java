@@ -1,6 +1,5 @@
-package com.ornn.wallet.util;
+package com.ornn.payment.utils;
 
-import com.ornn.wallet.entity.dto.UnifiedPayDTO;
 import lombok.extern.slf4j.Slf4j;
 
 import java.text.SimpleDateFormat;

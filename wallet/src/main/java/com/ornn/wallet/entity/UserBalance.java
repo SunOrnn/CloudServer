@@ -22,12 +22,12 @@ public class UserBalance {
     private Long userId;
 
     /**
-     * 账户类型
+     * 账户编号
      */
     private String accNo;
 
     /**
-     * 币种
+     * 账户类型
      */
     private String accType;
 
