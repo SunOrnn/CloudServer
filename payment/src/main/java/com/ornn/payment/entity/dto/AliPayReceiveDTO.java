@@ -7,7 +7,7 @@ import java.io.Serializable;
 @Data
 public class AliPayReceiveDTO implements Serializable {
     /**
-     * 通知时间（格式为“yyyy-MM-dd HH:mm:ss"
+     * 通知时间（格式为“yyyy-MM-dd HH:mm:ss）"
      */
     private String notify_time;
 
