@@ -1,5 +1,6 @@
 package com.ornn.payment.entity.dto;
 
+import io.swagger.annotations.ApiOperation;
 import lombok.Data;
 
 import java.io.Serializable;

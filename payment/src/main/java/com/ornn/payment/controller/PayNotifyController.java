@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 @Slf4j
 @RestController
 @RequestMapping("/notify")
-@Api()
+@Api(value = "Asynchronous Payment Result Notification", tags = "异步支付结果通知API")
 public class PayNotifyController {
 
     @Autowired
@@ -22,10 +22,10 @@ public class PayNotifyController {
     /**
      * 定义”支付宝异步支付结果通知“
      */
-    @ApiOperation(value = "", tags = "")
+    @ApiOperation(value = "Notice of Alipay asynchronous payment results", notes = "支付宝异步支付结果通知")
     @PostMapping("/aliPayReceive")
     public String aliPayReceive(AliPayReceiveDTO aliPayReceiveDTO) {
-
+        return payNotifyService.aliPayReceive(aliPayReceiveDTO);
     }
 
 }

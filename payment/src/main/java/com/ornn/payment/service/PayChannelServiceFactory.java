@@ -8,12 +8,12 @@ import org.springframework.stereotype.Service;
 @Service
 public class PayChannelServiceFactory {
     @Autowired
-    private PayChannelService payChannelService;
+    private PayChannelService aliPayChannelService;
 
     public PayChannelService createPayChannelService(int channelName) {
         switch (channelName) {
             case 1 :
-                return payChannelService;
+                return aliPayChannelService;
             default:
                 return null;
         }

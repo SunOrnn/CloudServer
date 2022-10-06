@@ -1,5 +1,6 @@
 package com.ornn.payment.convert;
 
+import com.ornn.payment.entity.PayNotify;
 import com.ornn.payment.entity.PayOrder;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mappings;

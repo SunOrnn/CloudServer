@@ -15,7 +15,7 @@ public class PayOrder {
     private Integer id;
 
     /**
-     * 业务方订单（需保持在接入方系统内唯一
+     * 业务方订单（需保持在接入方系统内唯一)
      */
     private String orderId;
 

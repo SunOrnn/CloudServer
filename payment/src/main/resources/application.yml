@@ -35,3 +35,15 @@ mybatis-plus:
     cache-enabled: false
     # 日志配置
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+# 支付宝渠道参数配置
+channel:
+  alipay:
+    # 沙箱应用AppId
+    appId:
+    # 沙箱应用私钥（公钥需要上传至支付宝后台）
+    privateKey:
+    # 在上传应用私钥时，支付宝自动配对生成的支付宝公钥
+    publicKey:
+    # 支付宝沙箱环境支付网关地址
+    payUrl:

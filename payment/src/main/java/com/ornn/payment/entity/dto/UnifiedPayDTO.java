@@ -78,7 +78,7 @@ public class UnifiedPayDTO implements Serializable {
     private String notifyUrll;
 
     /**
-     * 同步支付结果跳转地址（支付成功后同步跳转转回接入方系统界面的URL
+     * 同步支付结果跳转地址（支付成功后同步跳转转回接入方系统界面的URL)
      */
     private String returnUrl;
 

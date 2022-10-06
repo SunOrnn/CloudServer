@@ -17,15 +17,15 @@ import org.springframework.web.bind.annotation.RestController;
 @Slf4j
 @RestController
 @RequestMapping("/pay")
-@Api()
+@Api(value = "Unified Payment Interface Controller", tags = "统一支付接口API")
 public class PayController {
 
     @Autowired
     private PayService payService;
 
-    @ApiOperation(value = "", tags = "")
+    @ApiOperation(value = "Unified Payment Interface", notes = "统一支付接口")
     @PostMapping("/unifiedPay")
     public ResponseResult<UnifiedPayVO> unifiedPay(@RequestBody @Validated UnifiedPayDTO unifiedPayDTO) {
-        return ResponseResult.OK();
+        return ResponseResult.OK(payService.unifiedPay(unifiedPayDTO));
     }
 }
