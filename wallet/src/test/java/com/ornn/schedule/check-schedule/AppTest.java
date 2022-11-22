@@ -2,9 +2,9 @@ package org.example;
 
 import static org.junit.Assert.assertTrue;
 
-import com.ornn.schedule.wallet.util.DateUtils;
-import com.ornn.schedule.wallet.util.IDutils;
-import com.ornn.schedule.wallet.util.SnowFlakeIdGenerator;
+import com.ornn.wallet.util.DateUtils;
+import com.ornn.wallet.util.IDutils;
+import com.ornn.wallet.util.SnowFlakeIdGenerator;
 import org.junit.Test;
 
 import java.util.Date;
