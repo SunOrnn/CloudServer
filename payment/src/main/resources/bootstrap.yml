@@ -4,11 +4,14 @@ spring:
     profile:
       active: debug
     cloud:
-      consul:
-        discovery:
-          preferIpAddress: true
-          instance-id: ${spring.application.name}:${spring.cloud.client.ipAddress}:${spring.application.instance_id:${server.port}}:@project.version@
-          healthCheckPath: /actuator/health
+#      consul:
+#        discovery:
+#          preferIpAddress: true
+#          instance-id: ${spring.application.name}:${spring.cloud.client.ipAddress}:${spring.application.instance_id:${server.port}}:@project.version@
+#          healthCheckPath: /actuator/health
+        nacos:
+          discovery:
+            server-addr: 127.0.0.1:8848
 
 server:
   port: 9091
