@@ -30,11 +30,11 @@ spring:
             - Path=/account/**
           filters:
 
-        -id: payment
-         uri: lb://payment
-         predicates:
+        - id: payment
+          uri: lb://payment
+          predicates:
            - Path=
-        filters:
+          filters:
 
 #      default-filters:
 #        - AddRequestHeader=gateway-env, springcloud-gateway
