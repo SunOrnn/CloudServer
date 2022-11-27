@@ -1,0 +1,68 @@
+logging:
+  level:
+    org.springframework.cloud.gateway: DEBUG
+    reactor.netty.http.client: DEBUG
+
+spring:
+  application:
+    name: spring-gateway
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+    gateway:
+      discovery:
+        locator: true #默认值为 true，即默认开启从注册中心动态创建路由的功能，利用微服务名进行路由
+
+      globalcors: # ??????
+        cors-configurations:
+          '[/**]': # ??????
+            allowedOrigins: "*" #???? ??????
+            allowedMethods: # ?????
+              - GET
+              - POST
+              - PUT
+              - DELETE
+      routes:
+        - id: wallet
+          uri: lb://wallet
+          predicates:
+            - Path=/account/**
+          filters:
+
+        -id: payment
+         uri: lb://payment
+         predicates:
+           - Path=
+        filters:
+
+#      default-filters:
+#        - AddRequestHeader=gateway-env, springcloud-gateway
+#      routes:
+#        - id: "server_v2"
+#          uri: "http://127.0.0.1:8002"
+#          predicates:
+#            - Path=/api/v2/**
+#            - name: CustomReadBody
+#              args:
+#                inClass: '#{T(String)}'
+#                predicate: '#{@bodyPredicate}' #????predicate???
+#          filters:
+#            - Demo=true
+#            - PreserveHostHeader # ??host????localhost
+#        - id: "server_v1"
+#          uri: "http://127.0.0.1:8001"
+#          predicates:
+#            - Path=/api/**
+#            - name: CustomReadBody # ?body????
+#              args:
+#                inClass: '#{T(String)}'
+#                predicate: '#{@bodyPredicate}'
+#          filters:
+#            - Demo=true
+#            - PreserveHostHeader # ??host????localhost
+#  codec:
+#    max-in-memory-size: 5MB # ????POST??????????
+
+server:
+  port: 9093

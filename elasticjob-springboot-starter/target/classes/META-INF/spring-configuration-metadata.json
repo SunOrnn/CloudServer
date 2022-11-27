@@ -1,0 +1,43 @@
+{
+  "groups": [
+    {
+      "name": "elasticjob.zk",
+      "type": "org.apache.shardingsphere.elasticjob.reg.zookeeper.ZookeeperConfiguration",
+      "sourceType": "com.ornn.elasticjob.starter.ElasticAutoConfiguration",
+      "sourceMethod": "getConfiguration(java.lang.String,java.lang.String)"
+    }
+  ],
+  "properties": [
+    {
+      "name": "elasticjob.zk.base-sleep-time-milliseconds",
+      "type": "java.lang.Integer",
+      "sourceType": "org.apache.shardingsphere.elasticjob.reg.zookeeper.ZookeeperConfiguration"
+    },
+    {
+      "name": "elasticjob.zk.connection-timeout-milliseconds",
+      "type": "java.lang.Integer",
+      "sourceType": "org.apache.shardingsphere.elasticjob.reg.zookeeper.ZookeeperConfiguration"
+    },
+    {
+      "name": "elasticjob.zk.digest",
+      "type": "java.lang.String",
+      "sourceType": "org.apache.shardingsphere.elasticjob.reg.zookeeper.ZookeeperConfiguration"
+    },
+    {
+      "name": "elasticjob.zk.max-retries",
+      "type": "java.lang.Integer",
+      "sourceType": "org.apache.shardingsphere.elasticjob.reg.zookeeper.ZookeeperConfiguration"
+    },
+    {
+      "name": "elasticjob.zk.max-sleep-time-milliseconds",
+      "type": "java.lang.Integer",
+      "sourceType": "org.apache.shardingsphere.elasticjob.reg.zookeeper.ZookeeperConfiguration"
+    },
+    {
+      "name": "elasticjob.zk.session-timeout-milliseconds",
+      "type": "java.lang.Integer",
+      "sourceType": "org.apache.shardingsphere.elasticjob.reg.zookeeper.ZookeeperConfiguration"
+    }
+  ],
+  "hints": []
+}

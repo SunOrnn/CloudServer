@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/check-schedule/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/check-schedule/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/elasticjob-springboot-starter/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/elasticjob-springboot-starter/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/payment/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/payment/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-boot-pay/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-boot-pay/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-cloud-gateway/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/sso-authserver/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/sso-authserver/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/sso-gateway/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/sso-gateway/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/sso-resourceserver/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/sso-resourceserver/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/wallet/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/wallet/src/main/resources" charset="UTF-8" />
+  </component>
+</project>

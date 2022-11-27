@@ -1,0 +1,4 @@
+elasticjob:
+  zk:
+    serverLists:
+    namespace: check-namespace

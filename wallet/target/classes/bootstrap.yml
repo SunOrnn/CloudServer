@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: wallet
+    profiles:
+      active: debug
+    cloud:
+#      consul:
+#        discovery:
+#          preferIpAddress: true
+#          instance-id: ${spring.application.name}:${spring.cloud.client.ipAddress}:${spring.application.instance_id:${server.port}}:1.0-SNAPSHOT
+#          healthCheckPath: /actuator/health
+      nacos:
+        discovery:
+          server-addr: 127.0.0.1:8848
+
+server:
+  port: 9090
+
+# 配置Feign对Hystrix的支持
+feign:
+  hystrix:
+    enable: true
+
+

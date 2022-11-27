@@ -1,0 +1,11 @@
+
+t
+java:S1488J"^Immediately return this expression instead of assigning it to the temporary variable "imgUrl".(•ïÛù
+N
+java:S2629‚"7Use the built-in formatting to construct this argument.(¼…ÀÔ
+W
+java:S3457X"AFormat specifiers should be used instead of string concatenation.(ÒåÂñ
+\
+java:S3457p"AFormat specifiers should be used instead of string concatenation.(Òÿêğşÿÿÿÿ
+X
+java:S3457‚"AFormat specifiers should be used instead of string concatenation.(¼…ÀÔ

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="resourceserver" />
+        <module name="wallet" />
+        <module name="authserver" />
+        <module name="elasticjob-springboot-starter" />
+        <module name="spring-cloud-gateway" />
+        <module name="payment" />
+        <module name="check-schedule" />
+        <module name="spring-boot-pay" />
+        <module name="gateway" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="demo" target="1.8" />
+      <module name="sso-gateway" target="1.8" />
+      <module name="sso-server" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="authserver" options="-parameters" />
+      <module name="check-schedule" options="-parameters" />
+      <module name="demo" options="-parameters" />
+      <module name="elasticjob-springboot-starter" options="-parameters" />
+      <module name="gateway" options="-parameters" />
+      <module name="payment" options="-parameters" />
+      <module name="resourceserver" options="-parameters" />
+      <module name="spring-boot-pay" options="-parameters" />
+      <module name="spring-cloud-gateway" options="-parameters" />
+      <module name="sso-gateway" options="-parameters" />
+      <module name="sso-server" options="-parameters" />
+      <module name="wallet" options="-parameters" />
+    </option>
+  </component>
+</project>
