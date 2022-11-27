@@ -1,8 +1,6 @@
 
 F
 sso-authserver/pom.xml,d\3\d30d73e1397d99014eee618489fdfbf3813cd66f
-C
-sso-gateway/pom.xml,a\a\aaee80466fb5f47c8956c931649697cc6d0ce6b8
 J
 sso-resourceserver/pom.xml,5\4\5416e2ed944a3ea3c0b2fac66c80298de036ac88
 F
@@ -65,24 +63,12 @@ t
 Dpayment/src/main/java/com/ornn/payment/convert/PayNotifyConvert.java,f\6\f61fac0f69f368c3dcf07c8c9978ababd80ca1ed
 t
 Dwallet/src/main/java/com/ornn/wallet/convert/UserBalanceConvert.java,6\0\6057331689e75c37714bbd37f2bca4d1e5298e4d
-?
-payment/pom.xml,f\6\f668926134b80226afc9f53362827feb391dddf1
 y
 Iwallet/src/main/java/com/ornn/wallet/convert/UserBalanceOrderConvert.java,c\e\ce130a2b770ab968517e1aca6ee89af9faac351c
-k
-;wallet/src/main/java/com/ornn/wallet/WalletApplication.java,b\9\b9de8fef809446ba68c86147fee9fbb37cc5c407
 >
 wallet/pom.xml,1\c\1cc1c836c102cbe922bb41a8186133d327bc47b0
 L
 spring-cloud-gateway/pom.xml,5\a\5a24e27b18041cc7d4ea5830f550aa7b2031dcb8
-n
->wallet/src/main/java/com/ornn/wallet/config/SwaggerConfig.java,e\7\e7c97769af68343b1c4b152c98142a92e1b4eed7
-z
-Jwallet/src/main/java/com/ornn/wallet/controller/UserAccountController.java,7\4\74ca7c62d33061ca44626c097bb645b95cc7ad08
-†
-Vspring-cloud-gateway/src/main/java/com/ornn/gateway/SpringcloudGatewayApplication.java,e\6\e62a9df54c3554a374f96fe25fb94334dd5de12d
-
-Owallet/src/main/java/com/ornn/wallet/controller/UserAccountTradeController.java,9\2\929d815a8f810d9215e463c6771ed03cf40f543f
 }
 Mwallet/src/main/java/com/ornn/wallet/client/PayMentClientFallbackFactory.java,6\d\6d1a8d3ba1b158260b600e773dbaa50c1cd388bb
 n
@@ -91,3 +77,11 @@ p
 @payment/src/main/java/com/ornn/payment/config/SwaggerConfig.java,d\5\d528d6790893b6da22dd254162ad5ad0676d01d4
 y
 Ipayment/src/main/java/com/ornn/payment/config/RedisLockConfiguration.java,2\9\29e2b7fb79bd2ca695c5b13021f37ed2e4c19b36
+t
+Dpayment/src/main/java/com/ornn/payment/controller/PayController.java,c\7\c786274e541d1aecc9d442b157dc1834a716309f
+z
+Jpayment/src/main/java/com/ornn/payment/controller/PayNotifyController.java,f\4\f4587b0b1b4b37f36c20d84d68bd0fb59054743d
+v
+Fpayment/src/main/java/com/ornn/payment/exception/ServiceException.java,4\7\47217735dc48145564b406e293135fbf28968c75
+u
+Epayment/src/main/java/com/ornn/payment/service/PayChannelService.java,5\8\58cdf7b2b554bb7282b3dec9c68995aaee656118
