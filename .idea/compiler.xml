@@ -7,15 +7,23 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="resourceserver" />
+        <module name="jeepay-core" />
         <module name="wallet" />
+        <module name="jeepay-components-oss" />
         <module name="authserver" />
+        <module name="jeepay-manager" />
+        <module name="jeepay-z-codegen" />
+        <module name="resourceserver" />
         <module name="elasticjob-springboot-starter" />
+        <module name="jeepay-service" />
         <module name="spring-cloud-gateway" />
+        <module name="jeepay-components-mq" />
         <module name="payment" />
         <module name="check-schedule" />
         <module name="spring-boot-pay" />
+        <module name="jeepay-merchant" />
         <module name="gateway" />
+        <module name="jeepay-payment" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -31,6 +39,13 @@
       <module name="demo" options="-parameters" />
       <module name="elasticjob-springboot-starter" options="-parameters" />
       <module name="gateway" options="-parameters" />
+      <module name="jeepay-components-mq" options="-parameters" />
+      <module name="jeepay-components-oss" options="-parameters" />
+      <module name="jeepay-core" options="-parameters" />
+      <module name="jeepay-manager" options="-parameters" />
+      <module name="jeepay-merchant" options="-parameters" />
+      <module name="jeepay-payment" options="-parameters" />
+      <module name="jeepay-service" options="-parameters" />
       <module name="payment" options="-parameters" />
       <module name="resourceserver" options="-parameters" />
       <module name="spring-boot-pay" options="-parameters" />

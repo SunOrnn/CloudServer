@@ -12,7 +12,7 @@ import javax.annotation.Generated;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2022-11-27T18:52:33+0800",
+    date = "2022-11-27T19:00:36+0800",
     comments = "version: 1.4.1.Final, compiler: javac, environment: Java 1.8.0_202 (Oracle Corporation)"
 )
 public class UserBalanceConvertImpl implements UserBalanceConvert {

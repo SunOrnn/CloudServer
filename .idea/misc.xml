@@ -14,6 +14,7 @@
         <option value="$PROJECT_DIR$/elasticjob-springboot-starter/pom.xml" />
         <option value="$PROJECT_DIR$/spring-cloud-gateway/pom.xml" />
         <option value="$PROJECT_DIR$/spring-boot-pay/pom.xml" />
+        <option value="$PROJECT_DIR$/jeepay/pom.xml" />
       </list>
     </option>
   </component>
