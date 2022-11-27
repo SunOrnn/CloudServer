@@ -1,0 +1,5 @@
+
+q	java:S116h"WRename this field "out_trade_no" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ò’·îøÿÿÿÿ
+l	java:S116i"WRename this field "product_code" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ðœü¬
+q	java:S116j"WRename this field "total_amount" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ì¶†“ýÿÿÿÿ
+t	java:S116m"ZRename this field "passback_params" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¿—«Ðýÿÿÿÿ

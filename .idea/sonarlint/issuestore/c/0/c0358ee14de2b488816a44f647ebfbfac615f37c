@@ -1,0 +1,24 @@
+
+`	java:S112L"FDefine and throw a dedicated exception instead of using a generic one.(ù ã ûÿÿÿÿ
+t
+java:S2293V"YReplace the type specification in this constructor call with the diamond operator ("<>").(ô¢øÚýÿÿÿÿ
+o
+java:S2293u"YReplace the type specification in this constructor call with the diamond operator ("<>").(¼¿¹ã
+?
+java:S2629R"$Invoke method(s) only conditionally.(¹íÃˆúÿÿÿÿ
+c
+java:S2259d"HA "NullPointerException" could be thrown; "valideData" is nullable here.(‹èÒýùÿÿÿÿ
+R
+java:S2589T"7Remove this expression which always evaluates to "true"(¿Â–¤øÿÿÿÿ
+`
+java:S4488*"JReplace "@RequestMapping(method = RequestMethod.POST)" with "@PostMapping"(¡´€Î
+`
+java:S44883"JReplace "@RequestMapping(method = RequestMethod.POST)" with "@PostMapping"(™Ã©Ž
+h	java:S100L"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ù ã ûÿÿÿÿ
+e
+java:S4488K"JReplace "@RequestMapping(method = RequestMethod.POST)" with "@PostMapping"(ÇºÔÆúÿÿÿÿ
+?
+java:S1905Y")Remove this unnecessary cast to "String".(ôÄ˜È
+?
+java:S1905Z")Remove this unnecessary cast to "String".(÷ÇÿÒ
+Q	java:S125}"<This block of commented-out lines of code should be removed.(è²½¢
