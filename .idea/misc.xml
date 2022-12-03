@@ -5,7 +5,6 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/sso-gateway/pom.xml" />
         <option value="$PROJECT_DIR$/sso-authserver/pom.xml" />
         <option value="$PROJECT_DIR$/sso-resourceserver/pom.xml" />
         <option value="$PROJECT_DIR$/wallet/pom.xml" />

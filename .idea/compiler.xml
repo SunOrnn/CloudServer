@@ -22,12 +22,12 @@
         <module name="check-schedule" />
         <module name="spring-boot-pay" />
         <module name="jeepay-merchant" />
-        <module name="gateway" />
         <module name="jeepay-payment" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="demo" target="1.8" />
+      <module name="gateway" target="1.8" />
       <module name="sso-gateway" target="1.8" />
       <module name="sso-server" target="1.8" />
     </bytecodeTargetLevel>
