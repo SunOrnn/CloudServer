@@ -7,10 +7,6 @@ F
 check-schedule/pom.xml,e\d\ed1010532763eb9095405ea5b3189c447e773b23
 p
 @spring-boot-pay/src/main/java/com/pay/common/config/InitPay.java,3\9\3982a61746b778239127eaf842921f2f5be2c857
-o
-?spring-boot-pay/src/main/java/com/pay/common/model/Product.java,1\5\15d0eb571191ce0ad6ebfe64fc4c7af7c95f5749
-n
->spring-boot-pay/src/main/java/com/pay/common/model/Result.java,3\7\37a01903996a5214905281bd2451b7dcfdfdedc3
 V
 &spring-boot-pay/ÈÉ®ÁΩ≤/ÂêØÂä®ËØ¥Êòé.md,a\1\a196d1aa7b51f988c7b669b94901836437a78bd9
 a
@@ -27,16 +23,10 @@ s
 Cspring-boot-pay/src/main/java/com/pay/common/config/FileConfig.java,e\9\e9f0fb759ce71424adfcd6dca3379caad64137bf
 q
 Aspring-boot-pay/src/main/java/com/pay/common/config/Swagger2.java,b\c\bcddce0eebe3eb5585d6e84275467c8de908d4ac
-
-Ospring-boot-pay/src/main/java/com/pay/modules/web/controller/PayController.java,3\4\346f3c4146be3e836eba2f79a0b407c3daa582bc
-â
-Yspring-boot-pay/src/main/java/com/pay/modules/unionpay/controller/UnionPayController.java,c\0\c0358ee14de2b488816a44f647ebfbfac615f37c
 Ñ
 Tspring-boot-pay/src/main/java/com/pay/modules/unionpay/service/IUnionPayService.java,b\9\b92cae4bc056e29442457aeef5691f82d944b448
 å
 \spring-boot-pay/src/main/java/com/pay/modules/unionpay/service/impl/UnionPayServiceImpl.java,8\a\8ad175217fbd8af25ba7dc301cff328ed866eb21
-á
-Wspring-boot-pay/src/main/java/com/pay/modules/alipay/controller/CpAliPayController.java,4\c\4c964b53e37c829680f1d5bf90e4b152dbce884f
 Å
 Qspring-boot-pay/src/main/java/com/pay/modules/alipay/service/CpAliPayService.java,8\4\84848e0dec6e816afdb741751920d237ff49592b
 ä
