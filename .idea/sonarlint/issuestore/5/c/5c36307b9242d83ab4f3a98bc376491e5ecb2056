@@ -1,0 +1,11 @@
+
+h
+java:S2259>"RA "NullPointerException" could be thrown; "getRequestAttributes" is nullable here.(–”åÍ
+h
+java:S2259K"RA "NullPointerException" could be thrown; "getRequestAttributes" is nullable here.(–”åÍ
+œ
+java:S11863"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Àø’ìúÿÿÿÿ
+x
+java:S1450&"]Remove the "servletContext" field and declare it as a local variable in the relevant methods.(³÷ ´ùÿÿÿÿ
+M
+java:S1068&"2Remove this unused "servletContext" private field.(³÷ ´ùÿÿÿÿ
