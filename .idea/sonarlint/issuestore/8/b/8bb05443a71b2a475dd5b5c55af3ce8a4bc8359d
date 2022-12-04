@@ -1,0 +1,9 @@
+
+[	java:S1126"FDefine and throw a dedicated exception instead of using a generic one.(´š„’
+`	java:S112\"FDefine and throw a dedicated exception instead of using a generic one.(ˆö¿¯üÿÿÿÿ
+d
+java:S1192K"IDefine a constant instead of duplicating this literal "extParam" 3 times.(Å‘ˆªÿÿÿÿÿ
+a
+java:S1192J"FDefine a constant instead of duplicating this literal "appId" 3 times.(ûû¢©ıÿÿÿÿ
+k
+java:S1128"PRemove this unused import 'com.jeequan.jeepay.pay.service.ConfigContextService'.(ºÖÿÿÿÿÿ

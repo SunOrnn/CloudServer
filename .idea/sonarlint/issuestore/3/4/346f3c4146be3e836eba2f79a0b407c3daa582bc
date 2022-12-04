@@ -1,5 +1,0 @@
-
-_
-java:S4488"JReplace "@RequestMapping(method = RequestMethod.POST)" with "@PostMapping"(¾ëÌo
-^
-java:S4488 "HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(å×¯‚

@@ -5,7 +5,6 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/sso-gateway/pom.xml" />
         <option value="$PROJECT_DIR$/sso-authserver/pom.xml" />
         <option value="$PROJECT_DIR$/sso-resourceserver/pom.xml" />
         <option value="$PROJECT_DIR$/wallet/pom.xml" />
@@ -13,7 +12,6 @@
         <option value="$PROJECT_DIR$/check-schedule/pom.xml" />
         <option value="$PROJECT_DIR$/elasticjob-springboot-starter/pom.xml" />
         <option value="$PROJECT_DIR$/spring-cloud-gateway/pom.xml" />
-        <option value="$PROJECT_DIR$/spring-boot-pay/pom.xml" />
         <option value="$PROJECT_DIR$/jeepay/pom.xml" />
       </list>
     </option>

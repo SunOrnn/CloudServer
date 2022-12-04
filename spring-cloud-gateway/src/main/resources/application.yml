@@ -3,39 +3,49 @@ logging:
     org.springframework.cloud.gateway: DEBUG
     reactor.netty.http.client: DEBUG
 
+server:
+  9090
+
 spring:
   application:
-    name: spring-gateway
-  cloud:
-    nacos:
-      discovery:
-        server-addr: 127.0.0.1:8848
-    gateway:
-      discovery:
-        locator: true #默认值为 true，即默认开启从注册中心动态创建路由的功能，利用微服务名进行路由
+    name: gateway
+  profiles:
+    active: debug
+  gateway:
+    discovery:
+      locator: true #默认值为 true，即默认开启从注册中心动态创建路由的功能，利用微服务名进行路由
 
-      globalcors: # ??????
-        cors-configurations:
-          '[/**]': # ??????
-            allowedOrigins: "*" #???? ??????
-            allowedMethods: # ?????
-              - GET
-              - POST
-              - PUT
-              - DELETE
-      routes:
-        - id: wallet
-          uri: lb://wallet
+    globalcors: # ??????
+      cors-configurations:
+        '[/**]': # ??????
+          allowedOrigins: "*" #???? ??????
+          allowedMethods: # ?????
+            - GET
+            - POST
+            - PUT
+            - DELETE
+    # 路由配置（规则由ID、目标URL、一组predicates及一组filters构成)
+    routes:
+      - id: wallet
+        uri: lb://wallet
+        predicates:
+          - Path=/account/**
+        filters:
+
+      - id: payment
+        uri: lb://payment
+        predicates:
+          - Path=
+        filters:
+          -
+      - id: sso-resourceserver
+          # lb代表从注册中心获取服务，格式为lb://$(注册服务的名字）
+          uri: lb://sso-resourceserver
           predicates:
-            - Path=/account/**
+            # 通过路径进行匹配
+            - Path=/resources/**
           filters:
-
-        - id: payment
-          uri: lb://payment
-          predicates:
-           - Path=
-          filters:
-
+            - StripPrefix=1
 #      default-filters:
 #        - AddRequestHeader=gateway-env, springcloud-gateway
 #      routes:
@@ -63,6 +73,3 @@ spring:
 #            - PreserveHostHeader # ??host????localhost
 #  codec:
 #    max-in-memory-size: 5MB # ????POST??????????
-
-server:
-  port: 9093

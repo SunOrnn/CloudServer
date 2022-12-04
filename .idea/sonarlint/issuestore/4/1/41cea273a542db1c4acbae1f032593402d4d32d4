@@ -1,0 +1,9 @@
+
+P
+java:S1118":Add a private constructor to hide the implicit public one.(Ò®ÜÄ
+7
+java:S1116"Remove this empty statement.(ôŸìúÿÿÿÿ
+a
+java:S4065"FReplace this anonymous class with a call to "ThreadLocal.withInitial".(ÃÚÃÜûÿÿÿÿ
+\
+java:S4065"FReplace this anonymous class with a call to "ThreadLocal.withInitial".(ô·‘Õ

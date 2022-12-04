@@ -1,0 +1,15 @@
+
+†
+java:S1488*"dImmediately return this expression instead of assigning it to the temporary variable "unifiedPayVO".(á¿†‚ÿÿÿÿÿ8®¬ƒ‹Ç0
+<
+java:S1170"!Make this final field static too.(á°Ùÿÿÿÿÿ
+X	java:S125"<This block of commented-out lines of code should be removed.(äêý½8ÖÀ”‹Ç0
+]	java:S125-"<This block of commented-out lines of code should be removed.(ìûÞˆýÿÿÿÿ8Ï¬ƒ‹Ç0
+9
+java:S2119|"Save and re-use this "Random".(€×Ã¬ÿÿÿÿÿ
+{
+java:S1128"YRemove this unused import 'org.springframework.integration.redis.util.RedisLockRegistry'.(ÙýäÛùÿÿÿÿ8ïÀ”‹Ç0
+X
+java:S1144R"6Remove this unused private "isSuccessPayOrder" method.(£ÍâÖûÿÿÿÿ8ý¬ƒ‹Ç0
+N
+java:S1144e"1Remove this unused private "payOrderSave" method.(½Ü°Ø8ý¬ƒ‹Ç0
